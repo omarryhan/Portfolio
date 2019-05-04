@@ -1,12 +1,17 @@
 import React from "react"
 
 import SEO from "../components/seo"
+import { H1 } from "../components/CommonStyled"
+
+import GlobalStyles from "../components/CommonStyled/GlobalStyles"
+
 
 const IndexPage = () => (
-  <>
-    <SEO title="Omar Ryhan" keywords={[`omarryhan`, `omarfryhan`, `omar ryhan`]} />
-    <h1>Omar Ryhan's Public Cyberspace</h1>
-  </>
+    <>
+        <GlobalStyles />
+        <SEO title="Omar Ryhan" keywords={[`omarryhan`, `omarfryhan`, `omar ryhan`]} />
+        <H1>Omar Ryhan's Public Cyberspace</H1>
+    </>
 )
 
 export default IndexPage

@@ -1,0 +1,3 @@
+export const SET_IS_LOADING = 'SET_IS_LOADING';
+
+export const SET_IS_DARK_THEME = 'SET_IS_DARK_THEME';
