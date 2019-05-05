@@ -1,19 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
-import { Helmet } from 'react-helmet';
 
 import {
-    getIsDarkTheme,
-    MAIN_FONT_STYLE,
-    MIAN_FONT_FAMILY,
-    COLOR_PALETTE,
+  getIsDarkTheme,
+  MAIN_FONT_STYLE,
+  MIAN_FONT_FAMILY,
+  COLOR_PALETTE,
 } from '../../constants';
 
 
 const StyledGlobalStyle = createGlobalStyle`
-    @import url(${props => props.fontStyle});
-
     * {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -21,7 +19,11 @@ const StyledGlobalStyle = createGlobalStyle`
     }
 
     html body {
-        font-family: ${props => props.fontFamily};
+        @font-face {
+            font-family: ${props => props.fontFamily};
+            src: url(${props => props.fontStyle});
+        }
+
         max-width: 100%;
         color: ${props => props.colorTheme.color};
         background-color: ${props => props.colorTheme.backgroundColor};
@@ -35,36 +37,31 @@ const StyledGlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar {
         width: 0.5vw;
     }
-      
-    /* Track */
     ::-webkit-scrollbar-track {
         box-shadow: gray; 
     }
-      
-    /* Handle */
     ::-webkit-scrollbar-thumb {
         background: ${props => props.colorTheme.scrollbarHandleColor}; 
     }
 `;
 
 const GlobalStyles = ({
-    isDark,
+  isDark,
 }) => (
-    <>
-        <Helmet>
-            <link rel="preload" href={MAIN_FONT_STYLE} as="font" crossorigin />
-        </Helmet>
-        <StyledGlobalStyle
-            colorTheme={getIsDarkTheme(isDark)}
-            fontStyle={MAIN_FONT_STYLE}
-            fontFamily={MIAN_FONT_FAMILY}
-            colorPalette={COLOR_PALETTE}
-        />
-    </>
+  <StyledGlobalStyle
+    colorTheme={getIsDarkTheme(isDark)}
+    fontStyle={MAIN_FONT_STYLE}
+    fontFamily={MIAN_FONT_FAMILY}
+    colorPalette={COLOR_PALETTE}
+  />
 );
 
+GlobalStyles.propTypes = {
+  isDark: PropTypes.bool.isRequired,
+};
+
 export default connect(
-    state => ({
-        isDark: state.theme.isDark,
-    })
+  state => ({
+    isDark: state.theme.isDark,
+  }),
 )(GlobalStyles);

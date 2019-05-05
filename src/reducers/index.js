@@ -6,15 +6,15 @@ import theme from './Theme';
 
 
 const isLoading = (state = false, action) => {
-    switch (action.type) {
+  switch (action.type) {
     case types.SET_IS_LOADING:
-        return action.value;
+      return action.value;
     default:
-        return state;
-    }
+      return state;
+  }
 };
 
 export default () => combineReducers({
-    isLoading,
-    theme,
+  isLoading,
+  theme,
 });

@@ -5,8 +5,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createRootReducer from '../reducers';
 
 
-export default (initialState) => createStore(
-    createRootReducer(),
-    initialState,
-    composeWithDevTools({ })(applyMiddleware(thunk)),
+export default initialState => createStore(
+  createRootReducer(),
+  initialState,
+  composeWithDevTools({ })(applyMiddleware(thunk)),
 );
