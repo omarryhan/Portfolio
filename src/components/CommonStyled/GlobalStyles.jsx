@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
+import { Helmet } from 'react-helmet';
 
 import {
     getIsDarkTheme,
@@ -12,11 +13,13 @@ import {
 
 const StyledGlobalStyle = createGlobalStyle`
     @import url(${props => props.fontStyle});
+
     * {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
+
     html body {
         font-family: ${props => props.fontFamily};
         max-width: 100%;
@@ -47,12 +50,17 @@ const StyledGlobalStyle = createGlobalStyle`
 const GlobalStyles = ({
     isDark,
 }) => (
-    <StyledGlobalStyle
-        colorTheme={getIsDarkTheme(isDark)}
-        fontStyle={MAIN_FONT_STYLE}
-        fontFamily={MIAN_FONT_FAMILY}
-        colorPalette={COLOR_PALETTE}
-    />
+    <>
+        <Helmet>
+            <link rel="preload" href={MAIN_FONT_STYLE} as="font" crossorigin />
+        </Helmet>
+        <StyledGlobalStyle
+            colorTheme={getIsDarkTheme(isDark)}
+            fontStyle={MAIN_FONT_STYLE}
+            fontFamily={MIAN_FONT_FAMILY}
+            colorPalette={COLOR_PALETTE}
+        />
+    </>
 );
 
 export default connect(
