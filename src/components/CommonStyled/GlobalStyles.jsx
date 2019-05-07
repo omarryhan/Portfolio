@@ -5,8 +5,6 @@ import { createGlobalStyle } from 'styled-components';
 
 import {
   getIsDarkTheme,
-  MAIN_FONT_STYLE,
-  MIAN_FONT_FAMILY,
   COLOR_PALETTE,
 } from '../../constants';
 
@@ -19,17 +17,12 @@ const StyledGlobalStyle = createGlobalStyle`
     }
 
     html body {
-        @font-face {
-            font-family: ${props => props.fontFamily};
-            src: url(${props => props.fontStyle});
-        }
-
+        /* font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+        font-family: Raleway;
         max-width: 100%;
         color: ${props => props.colorTheme.color};
         background-color: ${props => props.colorTheme.backgroundColor};
         overflow: auto;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
         margin: 0;
         padding: 0;
     }
@@ -50,8 +43,6 @@ const GlobalStyles = ({
 }) => (
   <StyledGlobalStyle
     colorTheme={getIsDarkTheme(isDark)}
-    fontStyle={MAIN_FONT_STYLE}
-    fontFamily={MIAN_FONT_FAMILY}
     colorPalette={COLOR_PALETTE}
   />
 );

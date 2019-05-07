@@ -1,14 +1,19 @@
 export const COLOR_PALETTE = {
   blue: {
+    lightAlt: 'rgb(97, 184, 196)',
+    lightAlt2: 'rgb(2, 137, 140)',
     light: '#005E7C',
     primary: '#001242',
     dark: '#000022',
   },
   black: {
-    primary: '#040F16',
+    primary: 'rgb(28, 27, 32)',
   },
   white: {
     primary: '#fff',
+  },
+  fuschia: {
+    primary: 'rgb(235, 71, 126)',
   },
 };
 
@@ -27,5 +32,5 @@ export const DARK_THEME = {
 export const getIsDarkTheme = isDark => (isDark ? DARK_THEME : LIGHT_THEME);
 
 export const FONT_SIZES = {};
-export const MAIN_FONT_STYLE = 'https://fonts.googleapis.com/css?family=Montserrat';
-export const MIAN_FONT_FAMILY = '\'Montserrat\', sans-serif';
+
+export const GA_ID = 'UA-139782279-1';

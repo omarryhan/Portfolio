@@ -11,7 +11,9 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({
-  description, lang, meta, keywords, title,
+  description, lang, meta, keywords, title, image,
+  articlePublishedTime, articleModifiedTime, articleSection,
+  articleTags,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -21,6 +23,7 @@ function SEO({
             title
             description
             author
+            twitter
           }
         }
       }
@@ -38,6 +41,34 @@ function SEO({
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          property: 'profile:first_name',
+          content: 'Omar',
+        },
+        {
+          property: 'profile:last_name',
+          content: 'Ryhan',
+        },
+        {
+          property: 'article:published_time',
+          content: articlePublishedTime,
+        },
+        {
+          property: 'article:modified_time',
+          content: articleModifiedTime,
+        },
+        {
+          property: 'article:author',
+          content: 'Omar Ryhan',
+        },
+        {
+          property: 'article:section',
+          content: articleSection,
+        },
+        {
+          property: 'article:tag',
+          content: articleTags,
+        },
+        {
           name: 'description',
           content: metaDescription,
         },
@@ -54,12 +85,16 @@ function SEO({
           content: 'website',
         },
         {
+          property: 'og:image',
+          content: image,
+        },
+        {
           name: 'twitter:card',
           content: 'summary',
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.twitter,
         },
         {
           name: 'twitter:title',
@@ -68,6 +103,10 @@ function SEO({
         {
           name: 'twitter:description',
           content: metaDescription,
+        },
+        {
+          name: 'twitter:image',
+          content: image,
         },
       ]
         .concat(
@@ -88,6 +127,11 @@ SEO.defaultProps = {
   meta: [],
   keywords: [],
   description: '',
+  image: '',
+  articlePublishedTime: '',
+  articleModifiedTime: '',
+  articleSection: '',
+  articleTags: '',
 };
 
 SEO.propTypes = {
@@ -96,6 +140,11 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  articlePublishedTime: PropTypes.string, // JSON 8601
+  articleModifiedTime: PropTypes.string, // JSON 8601
+  articleSection: PropTypes.string,
+  articleTags: PropTypes.string,
 };
 
 export default SEO;

@@ -3,10 +3,42 @@ module.exports = {
     title: 'Omar Ryhan',
     description: 'Omar Ryhan\'s public cyberspace',
     author: 'Omar Ryhan',
+    twitter: 'omarryhan',
+    github: 'omarryhan',
+    siteUrl: 'https://omarryhan.me',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography',
+        omitGoogleFont: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: [
+            'Raleway',
+            // 'Montserrat',
+            // 'medium-content-sans-serif-font',
+            // '-apple-system',
+            // 'BlinkMacSystemFont',
+            // 'Segoe UI',
+            // 'Roboto',
+            // 'Oxygen',
+            // 'Ubuntu',
+            // 'Cantarell',
+            // 'Open Sans',
+            // 'Helvetica Neue',
+          ],
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -16,6 +48,12 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-139782279-1',
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
