@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 
-import {
-  getIsDarkTheme,
-  COLOR_PALETTE,
-} from '../../constants';
-
+import { getIsDarkTheme, COLOR_PALETTE } from '../../constants';
 
 const StyledGlobalStyle = createGlobalStyle`
     * {
@@ -38,9 +34,7 @@ const StyledGlobalStyle = createGlobalStyle`
     }
 `;
 
-const GlobalStyles = ({
-  isDark,
-}) => (
+const GlobalStyles = ({ isDark }) => (
   <StyledGlobalStyle
     colorTheme={getIsDarkTheme(isDark)}
     colorPalette={COLOR_PALETTE}
@@ -51,8 +45,6 @@ GlobalStyles.propTypes = {
   isDark: PropTypes.bool.isRequired,
 };
 
-export default connect(
-  state => ({
-    isDark: state.theme.isDark,
-  }),
-)(GlobalStyles);
+export default connect(state => ({
+  isDark: state.theme.isDark,
+}))(GlobalStyles);

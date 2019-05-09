@@ -1,6 +1,5 @@
 import * as types from '../constants/types';
 
-
 const initialState = {
   isDark: false,
 };

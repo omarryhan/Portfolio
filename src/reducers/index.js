@@ -4,7 +4,6 @@ import * as types from '../constants/types';
 
 import theme from './Theme';
 
-
 const isLoading = (state = false, action) => {
   switch (action.type) {
     case types.SET_IS_LOADING:

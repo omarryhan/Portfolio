@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Omar Ryhan',
-    description: 'Omar Ryhan\'s public cyberspace',
+    description: "Omar Ryhan's public cyberspace",
     author: 'Omar Ryhan',
     twitter: 'omarryhan',
     github: 'omarryhan',
@@ -11,6 +11,21 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://omarryhan.me',
+        sitemap: 'https://omarryhan.me/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      },
+    },
     {
       resolve: 'gatsby-plugin-typography',
       options: {
