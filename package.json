@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Omar Ryhan <omarryhan@gmail.com>",
   "dependencies": {
+    "@types/styled-components": "^4.1.14",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.4.0",
     "gatsby-image": "^2.0.41",
@@ -32,11 +33,14 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.2.0",
-    "typescript": "^3.4.5",
     "typography": "^0.16.19",
     "typography-theme-lincoln": "^0.16.19"
   },
   "devDependencies": {
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-helmet": "^5.0.8",
+    "@types/react-redux": "^7.0.8",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "babel-eslint": "^10.0.1",
@@ -50,7 +54,7 @@
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
     "gatsby-plugin-eslint": "^2.0.5",
-    "prettier": "^1.17.0"
+    "typescript": "^3.4.5"
   },
   "keywords": [
     "gatsby"
@@ -64,7 +68,8 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint:fix": "eslint src/**/**/**/**/**/*.js* --fix",
-    "lint:check": "eslint src/**/**/**/**/**/*.js*"
+    "lint:check": "eslint src/**/**/**/**/**/*.js*",
+    "type-check": "tsc"
   },
   "repository": {
     "type": "git",

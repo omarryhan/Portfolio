@@ -1,9 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 
-import { getIsDarkTheme, COLOR_PALETTE } from '../../constants';
+import { getIsDarkTheme, COLOR_PALETTE } from '../../constants/index';
+
+
+interface IStyledGlobalStyle {
+  colorTheme: {
+    color: string,
+    backgroundColor: string,
+    scrollbarHandleColor: string,
+  };
+};
 
 const StyledGlobalStyle = createGlobalStyle`
     * {
@@ -34,15 +42,15 @@ const StyledGlobalStyle = createGlobalStyle`
     }
 `;
 
-const GlobalStyles = ({ isDark }) => (
+const GlobalStyles = ({ isDark }: IGlobalStyles) => (
   <StyledGlobalStyle
     colorTheme={getIsDarkTheme(isDark)}
     colorPalette={COLOR_PALETTE}
   />
 );
 
-GlobalStyles.propTypes = {
-  isDark: PropTypes.bool.isRequired,
+interface IGlobalStyles {
+  isDark: boolean;
 };
 
 export default connect(state => ({

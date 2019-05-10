@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import * as types from '../constants/types';
 
-import theme from './Theme';
+import theme from './theme';
 
 const isLoading = (state = false, action) => {
   switch (action.type) {

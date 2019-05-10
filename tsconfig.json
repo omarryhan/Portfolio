@@ -1,0 +1,31 @@
+
+{
+    "include": ["./src/**/*"],
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      //"module": "esnext",
+
+      //"lib": ["dom", "esnext"],
+      "lib": ["dom", "es2017"],
+
+      // "allowJs": true,
+      // "checkJs": true,
+
+      //"jsx": "react",
+      "jsx": "preserve",
+
+      "strict": true,
+      "esModuleInterop": true,
+      
+      // for interop with babel
+      "noEmit": true,
+      
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "preserveConstEnums": true,
+
+      // "skipLibCheck": true
+    },
+    "exclude": ["node_modules", "public", ".cache"]
+  }

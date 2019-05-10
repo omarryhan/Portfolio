@@ -1,7 +1,9 @@
 {
     "parser": "@typescript-eslint/parser",
     "env": {
-        "browser": true
+        "browser": true,
+        "node": true,
+        "es6": true
     },
     "plugins": [
         "@typescript-eslint",
@@ -16,10 +18,20 @@
     ],
     "rules": {
         "indent": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
         "@typescript-eslint/indent": ["error", 2],
         "import/prefer-default-export": "off",
         "no-else-return": "off",
         "no-console": "off",
-        "react/no-unescaped-entities": "off"
+        "react/no-unescaped-entities": "off",
+        "react/prop-types": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
     }
 }
