@@ -6,7 +6,7 @@ import { H1 } from '../../components/CommonStyled/index';
 import GlobalStyles from '../../components/GlobalStyles/index';
 
 
-const IndexPage: React.FC<{}> = (): any => (
+const IndexPage: React.FC<{}> = (): JSX.Element => (
   <GlobalStyles>
     <SEO
       title="Omar Ryhan"

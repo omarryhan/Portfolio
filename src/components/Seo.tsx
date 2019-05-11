@@ -35,7 +35,7 @@ const SEO: React.FC<Props> = ({
   articleModifiedTime = '',
   articleSection = '',
   articleTags = '',
-}: Props): any => {
+}: Props): JSX.Element => {
   const { site } = useStaticQuery(
     graphql`
       query {

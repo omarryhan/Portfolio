@@ -49,7 +49,7 @@ interface GlobalStylesProps {
   children: React.ReactNode | null | undefined;
 }
 
-const GlobalStyles: React.FC<GlobalStylesProps> = ({ isDark, children }): any => (
+const GlobalStyles: React.FC<GlobalStylesProps> = ({ isDark, children }): JSX.Element => (
   <>
     <StyledGlobalStyle
       colorTheme={getIsDarkTheme(isDark)}
@@ -58,8 +58,12 @@ const GlobalStyles: React.FC<GlobalStylesProps> = ({ isDark, children }): any =>
   </>
 );
 
+type MapStateToPropsType = {
+  isDark: boolean;
+}
+
 export default connect(
-  (state: RootStateType): any => ({
+  (state: RootStateType): MapStateToPropsType => ({
     isDark: state.theme.isDark,
   }),
 )(GlobalStyles);
