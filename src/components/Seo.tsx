@@ -21,7 +21,7 @@ function SEO({
   articleModifiedTime,
   articleSection,
   articleTags,
-}) {
+}: Props): JSX.Element {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -153,5 +153,18 @@ SEO.propTypes = {
   articleSection: PropTypes.string,
   articleTags: PropTypes.string,
 };
+
+interface Props {
+  description?: string;
+  lang?: string;
+  meta?: object[];
+  keywords?: string[];
+  title: string;
+  image?: string;
+  articlePublishedTime?: string; // JSON 8601
+  articleModifiedTime?: string; // JSON 8601
+  articleSection?: string;
+  articleTags?: string;
+}
 
 export default SEO;

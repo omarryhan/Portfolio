@@ -5,7 +5,7 @@ import { H1 } from '../components/CommonStyled/index';
 
 import GlobalStyles from '../components/GlobalStyles/index';
 
-const IndexPage = () => (
+const IndexPage = (): JSX.Element => (
   <>
     <GlobalStyles />
     <SEO

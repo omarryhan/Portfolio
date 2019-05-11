@@ -1,4 +1,4 @@
-export const ARTICLE_TAGS = {
+export const ARTICLE_TAGS = Object.freeze({
   technology: {
     color: '',
   },
@@ -11,4 +11,4 @@ export const ARTICLE_TAGS = {
   science: {
     color: '',
   },
-};
+});

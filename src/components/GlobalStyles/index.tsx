@@ -2,18 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 
-import { getIsDarkTheme, COLOR_PALETTE } from '../../constants/index';
+import { getIsDarkTheme } from '../../constants/index';
+import { RootStateType } from '../../reducers/types';
 
 
-interface IStyledGlobalStyle {
+interface StyledGlobalStyleType {
   colorTheme: {
-    color: string,
-    backgroundColor: string,
-    scrollbarHandleColor: string,
+    color: string;
+    backgroundColor: string;
+    scrollbarHandleColor: string;
   };
-};
+}
 
-const StyledGlobalStyle = createGlobalStyle`
+const StyledGlobalStyle = createGlobalStyle<StyledGlobalStyleType>`
     * {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -24,8 +25,8 @@ const StyledGlobalStyle = createGlobalStyle`
         /* font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
         font-family: Raleway;
         max-width: 100%;
-        color: ${props => props.colorTheme.color};
-        background-color: ${props => props.colorTheme.backgroundColor};
+        color: ${(props: StyledGlobalStyleType): string => props.colorTheme.color};
+        background-color: ${(props: StyledGlobalStyleType): string => props.colorTheme.backgroundColor};
         overflow: auto;
         margin: 0;
         padding: 0;
@@ -38,21 +39,20 @@ const StyledGlobalStyle = createGlobalStyle`
         box-shadow: gray; 
     }
     ::-webkit-scrollbar-thumb {
-        background: ${props => props.colorTheme.scrollbarHandleColor}; 
+        background: ${(props: StyledGlobalStyleType): string => props.colorTheme.scrollbarHandleColor}; 
     }
 `;
 
-const GlobalStyles = ({ isDark }: IGlobalStyles) => (
+interface GlobalStylesType {
+  isDark: boolean;
+}
+
+const GlobalStyles = ({ isDark }: GlobalStylesType): JSX.Element => (
   <StyledGlobalStyle
     colorTheme={getIsDarkTheme(isDark)}
-    colorPalette={COLOR_PALETTE}
   />
 );
 
-interface IGlobalStyles {
-  isDark: boolean;
-};
-
-export default connect(state => ({
+export default connect((state: RootStateType): GlobalStylesType => ({
   isDark: state.theme.isDark,
 }))(GlobalStyles);

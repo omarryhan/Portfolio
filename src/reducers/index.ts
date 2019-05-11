@@ -1,19 +1,14 @@
 import { combineReducers } from 'redux';
 
-import * as types from '../constants/types';
-
 import theme from './theme';
+import isLoading from './isLoading';
 
-const isLoading = (state = false, action) => {
-  switch (action.type) {
-    case types.SET_IS_LOADING:
-      return action.value;
-    default:
-      return state;
-  }
-};
 
-export default () => combineReducers({
+const rootReducer = () => combineReducers({
   isLoading,
   theme,
 });
+
+export default rootReducer;
+
+export type rootReducerType = ReturnType<typeof rootReducer>;
