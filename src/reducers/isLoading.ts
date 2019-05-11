@@ -4,7 +4,7 @@ import { Action } from '../actions/types';
 
 const initialState = false;
 
-export default (state: typeof initialState = initialState, action: Action): boolean => {
+export default (state: boolean = initialState, action: Action): boolean => {
   switch (action.type) {
     case types.SET_IS_LOADING:
       return action.value;

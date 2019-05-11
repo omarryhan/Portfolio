@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { connect } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 
@@ -6,7 +7,7 @@ import { getIsDarkTheme } from '../../constants/index';
 import { RootStateType } from '../../reducers/types';
 
 
-interface StyledGlobalStyleType {
+interface StyledGlobalStyleProps {
   colorTheme: {
     color: string;
     backgroundColor: string;
@@ -14,7 +15,7 @@ interface StyledGlobalStyleType {
   };
 }
 
-const StyledGlobalStyle = createGlobalStyle<StyledGlobalStyleType>`
+const StyledGlobalStyle = createGlobalStyle<StyledGlobalStyleProps>`
     * {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -25,8 +26,8 @@ const StyledGlobalStyle = createGlobalStyle<StyledGlobalStyleType>`
         /* font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
         font-family: Raleway;
         max-width: 100%;
-        color: ${(props: StyledGlobalStyleType): string => props.colorTheme.color};
-        background-color: ${(props: StyledGlobalStyleType): string => props.colorTheme.backgroundColor};
+        color: ${(props: StyledGlobalStyleProps): string => props.colorTheme.color};
+        background-color: ${(props: StyledGlobalStyleProps): string => props.colorTheme.backgroundColor};
         overflow: auto;
         margin: 0;
         padding: 0;
@@ -39,20 +40,26 @@ const StyledGlobalStyle = createGlobalStyle<StyledGlobalStyleType>`
         box-shadow: gray; 
     }
     ::-webkit-scrollbar-thumb {
-        background: ${(props: StyledGlobalStyleType): string => props.colorTheme.scrollbarHandleColor}; 
+        background: ${(props: StyledGlobalStyleProps): string => props.colorTheme.scrollbarHandleColor}; 
     }
 `;
 
-interface GlobalStylesType {
-  isDark: boolean;
+interface GlobalStylesProps {
+  isDark?: boolean;
+  children: React.ReactNode | null | undefined;
 }
 
-const GlobalStyles = ({ isDark }: GlobalStylesType): JSX.Element => (
-  <StyledGlobalStyle
-    colorTheme={getIsDarkTheme(isDark)}
-  />
+const GlobalStyles: React.FC<GlobalStylesProps> = ({ isDark, children }): any => (
+  <>
+    <StyledGlobalStyle
+      colorTheme={getIsDarkTheme(isDark)}
+    />
+    {children}
+  </>
 );
 
-export default connect((state: RootStateType): GlobalStylesType => ({
-  isDark: state.theme.isDark,
-}))(GlobalStyles);
+export default connect(
+  (state: RootStateType): any => ({
+    isDark: state.theme.isDark,
+  }),
+)(GlobalStyles);

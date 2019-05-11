@@ -17,6 +17,12 @@ export const COLOR_PALETTE = Object.freeze({
   },
 });
 
+type ThemeType = {
+  color: string;
+  backgroundColor: string;
+  scrollbarHandleColor: string;
+};
+
 export const LIGHT_THEME = Object.freeze({
   color: COLOR_PALETTE.black.primary,
   backgroundColor: COLOR_PALETTE.white.primary,
@@ -29,7 +35,7 @@ export const DARK_THEME = Object.freeze({
   scrollbarHandleColor: COLOR_PALETTE.white.primary,
 });
 
-export const getIsDarkTheme = (isDark: boolean): typeof LIGHT_THEME | typeof DARK_THEME => (
+export const getIsDarkTheme = (isDark: boolean = false): ThemeType => (
   isDark ? DARK_THEME : LIGHT_THEME
 );
 

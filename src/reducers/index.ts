@@ -4,11 +4,7 @@ import theme from './theme';
 import isLoading from './isLoading';
 
 
-const rootReducer = () => combineReducers({
+export default combineReducers({
   isLoading,
   theme,
 });
-
-export default rootReducer;
-
-export type rootReducerType = ReturnType<typeof rootReducer>;

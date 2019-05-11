@@ -6,22 +6,36 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({
-  description,
-  lang,
-  meta,
-  keywords,
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+  meta?: {name: string; content: string}[];
+  keywords?: string[];
+  image?: string;
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
+  articleSection?: string;
+  articleTags?: string;
+}
+
+const SEO: React.FC<Props> = ({
   title,
-  image,
-  articlePublishedTime,
-  articleModifiedTime,
-  articleSection,
-  articleTags,
-}: Props): JSX.Element {
+  lang = 'en',
+  meta = [],
+  keywords = [],
+  description = '',
+  image = '',
+  articlePublishedTime = '',
+  articleModifiedTime = '',
+  articleSection = '',
+  articleTags = '',
+}: Props): any => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -127,44 +141,6 @@ function SEO({
         .concat(meta)}
     />
   );
-}
-
-SEO.defaultProps = {
-  lang: 'en',
-  meta: [],
-  keywords: [],
-  description: '',
-  image: '',
-  articlePublishedTime: '',
-  articleModifiedTime: '',
-  articleSection: '',
-  articleTags: '',
 };
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string,
-  articlePublishedTime: PropTypes.string, // JSON 8601
-  articleModifiedTime: PropTypes.string, // JSON 8601
-  articleSection: PropTypes.string,
-  articleTags: PropTypes.string,
-};
-
-interface Props {
-  description?: string;
-  lang?: string;
-  meta?: object[];
-  keywords?: string[];
-  title: string;
-  image?: string;
-  articlePublishedTime?: string; // JSON 8601
-  articleModifiedTime?: string; // JSON 8601
-  articleSection?: string;
-  articleTags?: string;
-}
 
 export default SEO;
