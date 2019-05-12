@@ -57,6 +57,7 @@
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
     "gatsby-plugin-eslint": "^2.0.5",
+    "husky": "^2.2.0",
     "typescript": "^3.4.5",
     "webpack": "^4.31.0"
   },
@@ -70,10 +71,17 @@
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "test": "yarn tsc",
     "lint:fix": "eslint src/**/**/**/**/**/*.ts* --fix",
     "lint:check": "eslint src/**/**/**/**/**/*.ts*",
     "tsc": "tsc --skipLibCheck"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn tsc",
+      "pre-push": "yarn tsc",
+      "...": "..."
+    }
   },
   "repository": {
     "type": "git",
