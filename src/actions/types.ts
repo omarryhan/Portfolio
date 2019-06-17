@@ -1,16 +1,13 @@
-import { SET_IS_DARK_THEME, SET_IS_LOADING } from '../constants/actionTypes';
-
-
-export interface SetIsDarkAction {
-  readonly type: typeof SET_IS_DARK_THEME;
+export interface SetIsDarkActionI {
+  readonly type: string;
   readonly value: boolean;
 }
 
-export interface SetIsLoadingAction {
-  readonly type: typeof SET_IS_LOADING;
+export interface SetIsLoadingActionI {
+  readonly type: string;
   readonly value: boolean;
 }
 
 export type Action =
-    | SetIsDarkAction
-    | SetIsLoadingAction;
+  | SetIsDarkActionI
+  | SetIsLoadingActionI;

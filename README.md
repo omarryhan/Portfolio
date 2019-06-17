@@ -11,8 +11,6 @@
   </a>
 </p>
 
-
-
 ## Visit
 
 https://omarryhan.me

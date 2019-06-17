@@ -7,7 +7,7 @@ import { getIsDarkTheme } from '../../constants/index';
 import { RootStateType } from '../../reducers/types';
 
 
-interface StyledGlobalStyleProps {
+interface StyledGlobalStylePropsI {
   colorTheme: {
     color: string;
     backgroundColor: string;
@@ -15,41 +15,48 @@ interface StyledGlobalStyleProps {
   };
 }
 
-const StyledGlobalStyle = createGlobalStyle<StyledGlobalStyleProps>`
-    * {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
+const StyledGlobalStyle = createGlobalStyle<StyledGlobalStylePropsI>`
+  * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: Raleway,Montserrat;
     }
 
-    html body {
-        /* font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
-        font-family: Raleway;
-        max-width: 100%;
-        color: ${(props: StyledGlobalStyleProps): string => props.colorTheme.color};
-        background-color: ${(props: StyledGlobalStyleProps): string => props.colorTheme.backgroundColor};
-        overflow: auto;
-        margin: 0;
-        padding: 0;
-    }
+  html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
 
-    ::-webkit-scrollbar {
-        width: 0.5vw;
-    }
-    ::-webkit-scrollbar-track {
-        box-shadow: gray; 
-    }
-    ::-webkit-scrollbar-thumb {
-        background: ${(props: StyledGlobalStyleProps): string => props.colorTheme.scrollbarHandleColor}; 
-    }
+  html body {
+      max-width: 100%;
+      color: ${(props: StyledGlobalStylePropsI): string => props.colorTheme.color};
+      background-color: ${(props: StyledGlobalStylePropsI): string => props.colorTheme.backgroundColor};
+      overflow: auto;
+      margin: 0;
+      padding: 0;
+
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+      width: 0.5vw;
+  }
+  ::-webkit-scrollbar-track {
+      box-shadow: gray; 
+  }
+  ::-webkit-scrollbar-thumb {
+      background: ${(props: StyledGlobalStylePropsI): string => props.colorTheme.scrollbarHandleColor}; 
+  }
 `;
 
-interface GlobalStylesProps {
+interface GlobalStylesPropsI {
   isDark?: boolean;
-  children: React.ReactNode | null | undefined;
+  children: React.ReactNode | undefined;
 }
 
-const GlobalStyles: React.FC<GlobalStylesProps> = ({ isDark, children }): JSX.Element => (
+const GlobalStyles: React.FC<GlobalStylesPropsI> = ({ isDark, children }): JSX.Element => (
   <>
     <StyledGlobalStyle
       colorTheme={getIsDarkTheme(isDark)}

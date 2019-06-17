@@ -1,19 +1,57 @@
 import React from 'react';
-
-import SEO from '../../components/Seo';
-import { H1 } from '../../components/CommonStyled/index';
-
-import GlobalStyles from '../../components/GlobalStyles/index';
+import { graphql } from 'gatsby';
+import PostLink from '../../components/PostLink';
 
 
-const IndexPage: React.FC<{}> = (): JSX.Element => (
-  <GlobalStyles>
-    <SEO
-      title="Omar Ryhan"
-      keywords={['omarryhan', 'omarfryhan', 'omar ryhan', 'blog']}
-    />
-    <H1>Omar Ryhan's Blog</H1>
-  </GlobalStyles>
-);
+interface EdgeI {
+  node: {
+    excerpt: string;
+    id: string;
+    frontmatter: {
+      date: string;
+      path: string;
+      title: string;
+    };
+  };
+}
+
+interface DataI {
+  data: {
+    allMarkdownRemark: {
+      edges: EdgeI[];
+    };
+  };
+}
+
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}: DataI): JSX.Element => {
+  console.log(edges);
+  const Posts = edges
+    .filter((edge: EdgeI): boolean => !!edge.node.frontmatter.date)
+    .map((edge: EdgeI): JSX.Element => <PostLink key={edge.node.id} post={edge.node} />);
+
+  return <div>{Posts}</div>;
+};
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date
+            path
+            title
+          }
+        }
+      }
+    }
+  }
+`;

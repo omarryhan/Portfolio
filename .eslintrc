@@ -25,8 +25,9 @@
         "no-console": "off",
         "react/no-unescaped-entities": "off",
         "react/prop-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/prefer-interface": "off"
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/prefer-interface": "off",
+        "@typescript/no-null-keyword": "off"
     },
     "settings": {
         "import/resolver": {

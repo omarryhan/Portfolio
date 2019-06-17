@@ -1,10 +1,10 @@
-export interface ThemeType {
+export interface ThemeI {
   isDark: boolean;
 }
 
 export type IsLoadingType = boolean;
 
 export interface RootStateType {
-  theme: ThemeType;
+  theme: ThemeI;
   isLoading: IsLoadingType;
 }

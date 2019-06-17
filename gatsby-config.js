@@ -11,6 +11,37 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {
+              wrapperStyle: 'margin-bottom: 1.0725rem',
+            },
+          },
+          'gatsby-remark-autolink-headers',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+            },
+          },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -20,18 +51,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+      },
+    },
+    {
       resolve: 'gatsby-plugin-typescript',
       options: {
         isTSX: true,
         allExtensions: true,
-        // jsxPragma: 'react',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-        omitGoogleFont: true,
+        // jsxPragma: 'react',  // breaks the build process
       },
     },
     {
@@ -40,17 +69,7 @@ module.exports = {
         google: {
           families: [
             'Raleway',
-            // 'Montserrat',
-            // 'medium-content-sans-serif-font',
-            // '-apple-system',
-            // 'BlinkMacSystemFont',
-            // 'Segoe UI',
-            // 'Roboto',
-            // 'Oxygen',
-            // 'Ubuntu',
-            // 'Cantarell',
-            // 'Open Sans',
-            // 'Helvetica Neue',
+            'Montserrat',
           ],
         },
       },
@@ -60,6 +79,13 @@ module.exports = {
       options: {
         name: 'images',
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages/blog`,
+        name: 'blog-pages',
       },
     },
     'gatsby-transformer-sharp',
@@ -73,8 +99,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Omar Ryhan',
+        short_name: 'Omar Ryhan',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
@@ -94,8 +120,7 @@ module.exports = {
         },
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // https://www.gatsbyjs.org/packages/gatsby-plugin-offline/#remove
+    'gatsby-plugin-offline',
   ],
 };

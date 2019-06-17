@@ -1,16 +1,16 @@
 import * as types from '../constants/actionTypes';
 import { Action } from '../actions/types';
-import { ThemeType } from './types';
+import { ThemeI } from './types';
 
 
-const initialState: ThemeType = Object.freeze({
+const initialState: ThemeI = Object.freeze({
   isDark: false,
 });
 
 export default (
-  state: ThemeType = initialState,
+  state: ThemeI = initialState,
   action: Action,
-): ThemeType => {
+): ThemeI => {
   // eslint-disable-next-line max-len
   // const update = <T1 extends {}>((current: T1): (next: any) => T1 => (next: T1): T1 => ({ ...current, ...next }))(state);
 
