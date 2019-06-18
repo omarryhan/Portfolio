@@ -25,6 +25,9 @@ const ProfileImageWrapperDiv = styled.div`
   padding: 4px;
 
   border-radius: 50%;
+  -webkit-box-shadow: 6px 6px 23px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 6px 23px -9px rgba(0,0,0,0.75);
+  box-shadow: 6px 6px 23px -2px rgba(0,0,0,0.75);
   
   background-color: ${COLOR_PALETTE.blue.lightAlt};
 `;
@@ -34,12 +37,14 @@ const NameH1 = styled.h1`
 
   margin: 7vh 0;
   text-align: center;
+
+  font-family: 'Swanky and Moo Moo', cursive;
 `;
 
 const ProfileLinksWrapperDiv = styled.div`
   display: flex;
+  flex-wrap: wrap;
 
-  width: 500px;
   max-width: 90vw;
 
   margin: 0 auto;
@@ -49,8 +54,10 @@ const ProfileLinksWrapperDiv = styled.div`
 `;
 
 const ProfileLinkDiv = styled.div`
-  width: 100px;
-  padding: 2%;
+  width: 12vw;
+  min-width: 50px;
+  max-width: 100px;
+  padding: 1%;
 
   border-radius: 10px;
 

@@ -68,8 +68,9 @@ module.exports = {
       options: {
         google: {
           families: [
-            'Raleway',
             'Montserrat',
+            'Raleway',
+            'Swanky and Moo Moo',
           ],
         },
       },

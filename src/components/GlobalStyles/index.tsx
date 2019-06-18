@@ -20,7 +20,7 @@ const StyledGlobalStyle = createGlobalStyle<StyledGlobalStylePropsI>`
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
-      font-family: Raleway,Montserrat;
+      font-family: Montserrat,Raleway;
     }
 
   html {
