@@ -21,6 +21,12 @@ const ProfileImageWrapperDiv = styled.div`
   max-width: 60vw;
   margin: 0 auto;
   margin-top: 10vh;
+
+  padding: 0.3%;
+
+  border-radius: 50%;
+  
+  background-color: ${COLOR_PALETTE.blue.lightAlt};
 `;
 
 const NameH1 = styled.h1`

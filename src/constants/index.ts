@@ -30,7 +30,7 @@ type ThemeType = {
 
 export const LIGHT_THEME = Object.freeze({
   color: COLOR_PALETTE.black.primary,
-  backgroundColor: COLOR_PALETTE.white.dark,
+  backgroundColor: COLOR_PALETTE.white.off,
   scrollbarHandleColor: COLOR_PALETTE.blue.primary,
 });
 
