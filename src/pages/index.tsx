@@ -13,7 +13,7 @@ import LinkedInLogo from '../images/icons/linkedin-black-round.svg';
 import KeybaseLogo from '../images/icons/keybase-black-borderless.svg';
 import BlogLogo from '../images/icons/blog-black-borderless.svg';
 
-import { FONT_SIZES, COLOR_PALETTE } from '../constants';
+import { COLOR_PALETTE } from '../constants';
 
 
 const ProfileImageWrapperDiv = styled.div`
@@ -33,9 +33,10 @@ const ProfileImageWrapperDiv = styled.div`
 `;
 
 const NameH1 = styled.h1`
-  ${FONT_SIZES.xxxxl}
 
-  margin: 7vh 0;
+  font-size: calc(3em + 3vw);
+
+  margin: 7vh 0 2vh 0;
   text-align: center;
 
   font-family: 'Swanky and Moo Moo', cursive;
