@@ -22,7 +22,7 @@ const ProfileImageWrapperDiv = styled.div`
   margin: 0 auto;
   margin-top: 10vh;
 
-  padding: 0.3%;
+  padding: 4px;
 
   border-radius: 50%;
   
