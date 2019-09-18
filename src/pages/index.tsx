@@ -13,7 +13,7 @@ import LinkedInLogo from '../images/icons/linkedin-black-round.svg';
 import KeybaseLogo from '../images/icons/keybase-black-borderless.svg';
 import BlogLogo from '../images/icons/blog-black-borderless.svg';
 
-import { COLOR_PALETTE } from '../constants';
+import { COLOR_PALETTE, media } from '../constants';
 
 
 const ProfileImageWrapperDiv = styled.div`
@@ -34,9 +34,14 @@ const ProfileImageWrapperDiv = styled.div`
 
 const NameH1 = styled.h1`
 
-  font-size: calc(3em + 3vw);
+  //font-size: calc(3em + 2vw);
+  font-size: 6em;
 
-  margin: 7vh 0 2vh 0;
+  ${media.lessThan('mobileXLarge')`
+    font-size: 3.5em;
+  `};
+
+  margin: 5vh 0;
   text-align: center;
 
   font-family: 'Swanky and Moo Moo', cursive;
@@ -44,9 +49,8 @@ const NameH1 = styled.h1`
 
 const ProfileLinksWrapperDiv = styled.div`
   display: flex;
-  flex-wrap: wrap;
 
-  width: 500px;
+  width: 600px;
   max-width: 95vw;
 
   margin: 0 auto;
@@ -59,9 +63,10 @@ const ProfileLinkDiv = styled.div`
   width: 12vw;
   min-width: 50px;
   max-width: 100px;
-  padding: 1%;
+  padding: 0.5%;
 
   border-radius: 10px;
+  margin: 0 1vw;
 
   &:hover {
     background-color: ${COLOR_PALETTE.blue.lightAlt};
