@@ -68,14 +68,9 @@ module.exports = {
       options: {
         google: {
           families: [
-<<<<<<< HEAD
             'Swanky and Moo Moo',
-            'Raleway',
-=======
->>>>>>> b6437daa3ccd0772b3ba2649885a1e8b50792d2e
             'Montserrat',
             'Raleway',
-            'Swanky and Moo Moo',
           ],
         },
       },
