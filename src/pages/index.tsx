@@ -38,6 +38,10 @@ const NameH1 = styled.h1`
   font-size: 6em;
 
   ${media.lessThan('mobileXLarge')`
+    font-size: 4em;
+  `};
+
+  ${media.lessThan('mobileSmall')`
     font-size: 3.5em;
   `};
 
