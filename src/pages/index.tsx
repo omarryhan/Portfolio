@@ -24,9 +24,10 @@ const ProfileImageWrapperDiv = styled.div`
 `;
 
 const NameH1 = styled.h1`
-  ${FONT_SIZES.xxxxl}
+  ${FONT_SIZES.xxxxxxl}
+  font-family: "Swanky and Moo Moo", cursive;
 
-  margin: 7vh 0;
+  margin: 2vh 0 2vh 0;
   text-align: center;
 `;
 
@@ -34,11 +35,11 @@ const ProfileLinksWrapperDiv = styled.div`
   display: flex;
 
   width: 500px;
-  max-width: 90vw;
+  max-width: 95vw;
 
   margin: 0 auto;
 
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 `;
 

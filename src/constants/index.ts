@@ -61,6 +61,21 @@ export const BREAKPOINTS = Object.freeze({
 export const media = generateMedia(BREAKPOINTS);
 
 export const FONT_SIZES = {
+  xxxxxxl: `
+    font-size: 4em;
+
+    ${media.lessThan('laptop')`
+        font-size: 3.15em;
+    `};
+
+    ${media.lessThan('tablet')`
+        font-size: 2.6em;
+    `};
+
+    ${media.lessThan('mobileMedium')`
+        font-size: 2em;
+    `};
+`,
   xxxxxl: `
       font-size: 3em;
 
