@@ -68,9 +68,14 @@ module.exports = {
       options: {
         google: {
           families: [
+<<<<<<< HEAD
             'Swanky and Moo Moo',
             'Raleway',
+=======
+>>>>>>> b6437daa3ccd0772b3ba2649885a1e8b50792d2e
             'Montserrat',
+            'Raleway',
+            'Swanky and Moo Moo',
           ],
         },
       },
@@ -103,8 +108,8 @@ module.exports = {
         name: 'Omar Ryhan',
         short_name: 'Omar Ryhan',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: 'rgb(2, 137, 140)',
+        theme_color: 'rgb(2, 137, 140)',
         display: 'minimal-ui',
         icon: 'src/images/O.svg', // This path is relative to the root of the site.
       },

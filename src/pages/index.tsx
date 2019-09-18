@@ -13,7 +13,7 @@ import LinkedInLogo from '../images/icons/linkedin-black-round.svg';
 import KeybaseLogo from '../images/icons/keybase-black-borderless.svg';
 import BlogLogo from '../images/icons/blog-black-borderless.svg';
 
-import { FONT_SIZES, COLOR_PALETTE } from '../constants';
+import { COLOR_PALETTE } from '../constants';
 
 
 const ProfileImageWrapperDiv = styled.div`
@@ -21,18 +21,30 @@ const ProfileImageWrapperDiv = styled.div`
   max-width: 60vw;
   margin: 0 auto;
   margin-top: 10vh;
+
+  padding: 4px;
+
+  border-radius: 50%;
+  -webkit-box-shadow: 6px 6px 23px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 6px 23px -9px rgba(0,0,0,0.75);
+  box-shadow: 6px 6px 23px -2px rgba(0,0,0,0.75);
+  
+  background-color: ${COLOR_PALETTE.blue.lightAlt};
 `;
 
 const NameH1 = styled.h1`
-  ${FONT_SIZES.xxxxxxl}
-  font-family: "Swanky and Moo Moo", cursive;
 
-  margin: 2vh 0 2vh 0;
+  font-size: calc(3em + 3vw);
+
+  margin: 7vh 0 2vh 0;
   text-align: center;
+
+  font-family: 'Swanky and Moo Moo', cursive;
 `;
 
 const ProfileLinksWrapperDiv = styled.div`
   display: flex;
+  flex-wrap: wrap;
 
   width: 500px;
   max-width: 95vw;
@@ -44,8 +56,10 @@ const ProfileLinksWrapperDiv = styled.div`
 `;
 
 const ProfileLinkDiv = styled.div`
-  width: 100px;
-  padding: 2%;
+  width: 12vw;
+  min-width: 50px;
+  max-width: 100px;
+  padding: 1%;
 
   border-radius: 10px;
 

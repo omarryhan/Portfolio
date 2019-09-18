@@ -26,18 +26,24 @@ type ThemeType = {
   color: string;
   backgroundColor: string;
   scrollbarHandleColor: string;
+
+  primaryColor: string;
 };
 
 export const LIGHT_THEME = Object.freeze({
   color: COLOR_PALETTE.black.primary,
-  backgroundColor: COLOR_PALETTE.white.dark,
+  backgroundColor: COLOR_PALETTE.white.off,
   scrollbarHandleColor: COLOR_PALETTE.blue.primary,
+
+  primaryColor: COLOR_PALETTE.blue.lightAlt,
 });
 
 export const DARK_THEME = Object.freeze({
   color: COLOR_PALETTE.white.primary,
   backgroundColor: COLOR_PALETTE.black.primary,
   scrollbarHandleColor: COLOR_PALETTE.white.primary,
+
+  primaryColor: COLOR_PALETTE.blue.lightAlt,
 });
 
 export const getIsDarkTheme = (isDark: boolean = false): ThemeType => (
