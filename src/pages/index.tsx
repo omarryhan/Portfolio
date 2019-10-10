@@ -12,6 +12,7 @@ import MailLogo from '../images/icons/mail-black-round.svg';
 import LinkedInLogo from '../images/icons/linkedin-black-round.svg';
 import KeybaseLogo from '../images/icons/keybase-black-borderless.svg';
 import BlogLogo from '../images/icons/blog-black-borderless.svg';
+import TwitterLogo from '../images/icons/twitter-black-borderless.svg';
 
 import { COLOR_PALETTE, media } from '../constants';
 
@@ -106,6 +107,11 @@ const IndexPage: React.FC<{}> = (): JSX.Element => (
         <ProfileLinkDiv>
           <a href="https://keybase.io/omarryhan" target="_blank" rel="noopener noreferrer">
             <img src={KeybaseLogo} alt="Keybase.io logo" key="Keybase" title="Keybase" width="100%" />
+          </a>
+        </ProfileLinkDiv>
+        <ProfileLinkDiv>
+          <a href="https://twitter.com/omarryhan" rel="noopener noreferrer">
+            <img src={TwitterLogo} alt="Twitter logo" key="Twitter" title="Follow me on Twitter" width="100%" />
           </a>
         </ProfileLinkDiv>
         <ProfileLinkDiv>
