@@ -66,7 +66,7 @@ const ProfileLinksWrapperDiv = styled.div`
 
 const ProfileLinkDiv = styled.div`
   width: 12vw;
-  min-width: 50px;
+  min-width: 40px;
   max-width: 100px;
   padding: 0.5%;
 
@@ -95,17 +95,17 @@ const IndexPage: React.FC<{}> = (): JSX.Element => (
       <ProfileLinksWrapperDiv>
 
         <ProfileLinkDiv>
-          <a href="mailto:omarryhan@gmail.com" target="_blank" rel="noopener noreferrer">
+          <a href="mailto:omarryhan@gmail.com" rel="noopener noreferrer">
             <img src={MailLogo} alt="Mail logo" key="Mail" title="Send me an email" width="100%" />
           </a>
         </ProfileLinkDiv>
         <ProfileLinkDiv>
-          <a href="https://github.com/omarryhan" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/omarryhan" rel="noopener noreferrer">
             <img src={GithubLogo} alt="Github logo" key="Github" title="Github" width="100%" />
           </a>
         </ProfileLinkDiv>
         <ProfileLinkDiv>
-          <a href="https://keybase.io/omarryhan" target="_blank" rel="noopener noreferrer">
+          <a href="https://keybase.io/omarryhan" rel="noopener noreferrer">
             <img src={KeybaseLogo} alt="Keybase.io logo" key="Keybase" title="Keybase" width="100%" />
           </a>
         </ProfileLinkDiv>
@@ -115,7 +115,7 @@ const IndexPage: React.FC<{}> = (): JSX.Element => (
           </a>
         </ProfileLinkDiv>
         <ProfileLinkDiv>
-          <a href="https://linkedin.com/in/omarryhan" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/omarryhan" rel="noopener noreferrer">
             <img src={LinkedInLogo} alt="LinkedIn logo" key="LinkedIn" title="LinkedIn" width="100%" />
           </a>
         </ProfileLinkDiv>
