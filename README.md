@@ -1,5 +1,5 @@
 <h1 align="center">
-  omarryhan.me
+  Personal website
 </h1>
 
 <p align="center">
