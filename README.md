@@ -1,5 +1,5 @@
 <h1 align="center">
-  Personal website
+  Portfolio
 </h1>
 
 <p align="center">
